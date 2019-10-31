@@ -9,23 +9,59 @@
     }
 
     p {
-      padding:0 15px;
+      padding: 0 15px;
     }
-  
+
+  }
+
+  .header-image {
+    display: flex;
+
+    img {
+      border-radius: 20px;
+      
+      // flex: 1;
+      @media @phone {
+        width: -webkit-fill-available;
+        border-radius: 5px;
+      }
+    }
   }
 
   .space-images {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    @media @phone {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hidden-on-mobile {
+      @media @phone {
+        display: none;
+      }
+    }
+
+    .blast {
+      @media @phone {
+              width: 93%;
+              margin: 20px auto;
+            border-radius: 20px;
+            height: 100%;
+            //flex: 1;
+            }
+      }
 
     img {
       width: 28%;
-      margin: 20px 2.5%;
+      margin: 20px auto;
       border-radius: 20px;
       height: 100%;
+      
     }
   }
+
 
   .visit-planets {
     padding: 15px;
@@ -46,7 +82,16 @@
     display: flex;
     justify-content: center;
 
+    @media @phone {
+      flex-direction: column-reverse; 
+      padding: 0; 
+      margin: 0 3%;
+    }
+
     .walk-text {
+      @media @phone {
+        width: 100%;
+      }
       width: 50%;
 
       h3 {
@@ -57,14 +102,32 @@
         margin-bottom: 26px;
       }
 
+
+      //Button Styling - Parametric Mixin-----
       .btn {
+        @media @phone {
+          .btn-mixin(100%, 4rem, 5px);
+          font-size: 2rem;
+          margin-bottom: 5%;
+          padding: 1rem;
+        }
+        .btn-mixin(50%, 3rem, 5px);
+        padding: 0.5rem;
       }
+
     }
 
     .walk-img {
+      @media @phone {
+        width: 100%;
+        
+        margin: 10% auto;
+      }
+
       width: 46%;
+      //height: 50%;
       margin-left: 4%;
-      
+
       img {
         width: 100%;
         height: auto;
@@ -72,4 +135,4 @@
       }
     }
   }
-}// home
+}

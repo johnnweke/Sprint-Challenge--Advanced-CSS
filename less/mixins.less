@@ -1,1 +1,23 @@
 // Mixins Here
+//Button Mixin:
+.btn-mixin (@width, @height, @border-radius) { 
+    background-color: @btn-bg-color;
+    color: @border-real;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    font-weight: bold;
+    width: @width;
+    height: @height;
+    border-radius: @border-radius;
+    p {
+        text-align: center;
+    }
+
+    &:hover {
+        background-color: @border-real;
+        color: @btn-bg-color;
+    }
+}
+
+//Webkit Fill Available Mixin
+@full-width: ~"-webkit-fill-available";
